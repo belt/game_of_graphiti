@@ -1,9 +1,7 @@
 class UserClass < ApplicationRecord
   belongs_to :user
 
-  validates :name, presence: true, allow_blank: false, uniqueness: {
-    scope: %i[start_date end_date]
-  }
+  validates :name, presence: true, allow_blank: false
   validates :description, presence: true, allow_blank: false
 
   validates :start_date, presence: true
