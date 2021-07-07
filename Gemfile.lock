@@ -299,6 +299,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
+    valid_attribute (2.0.0)
     vandal_ui (0.4.5)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
@@ -341,6 +342,7 @@ DEPENDENCIES
   spring
   sqlite3 (~> 1.4)
   tzinfo-data
+  valid_attribute
   vandal_ui
   zeitwerk
 
