@@ -119,6 +119,10 @@ GEM
       graphiti_errors (~> 1.1.0)
       jsonapi-renderer (~> 0.2, >= 0.2.2)
       jsonapi-serializable (~> 0.3.0)
+    graphiti-rails (0.3.0)
+      graphiti (~> 1.2)
+      railties (>= 5.0)
+      rescue_registry (~> 0.3.0)
     graphiti_errors (1.1.2)
       jsonapi-serializable (~> 0.1)
     graphiti_spec_helpers (1.0.5)
@@ -132,6 +136,18 @@ GEM
     jsonapi-renderer (0.2.2)
     jsonapi-serializable (0.3.1)
       jsonapi-renderer (~> 0.2.0)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -205,6 +221,11 @@ GEM
       ffi (~> 1.0)
     rb-readline (0.5.5)
     regexp_parser (2.1.1)
+    rescue_registry (0.3.0)
+      activesupport (>= 5.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
@@ -299,8 +320,10 @@ DEPENDENCIES
   faker (~> 2.5)
   fasterer
   flay
+  graphiti-rails
   graphiti_spec_helpers
   interactive_editor
+  kaminari
   listen (~> 3.3)
   oj
   overcommit
@@ -308,6 +331,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 5.0)
   rails (~> 6.1.4)
+  responders
   rspec
   rspec-rails (~> 4.0.0beta2)
   rubocop-performance
