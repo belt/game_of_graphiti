@@ -7,12 +7,16 @@ gem "activesupport"
 gem "awesome_print", require: "ap"
 gem "oj"
 gem "pry-bond"
-gem "pry-byebug"
-gem "zeitwerk"
-gem "rails", "~> 6.1.4"
-gem "sqlite3", "~> 1.4"
 gem "puma", "~> 5.0"
+gem "rails", "~> 6.1.4"
 gem "sass-rails", ">= 6"
+gem "sqlite3", "~> 1.4"
+gem "zeitwerk"
+
+# bug in graphiti dependency
+# https://github.com/graphiti-api/vandal_ui/pull/13
+# gem "vandal_ui", github: "nextekcarl/vandal_ui", branch: "patch-1"
+gem "vandal_ui"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -22,6 +26,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   gem "bond"
+  gem "pry-byebug"
   gem "byebug", platform: %i[mri mingw x64_mingw]
   gem "colorize", require: false
   gem 'factory_bot_rails', '~> 5.0'
