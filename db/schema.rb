@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_143007) do
+ActiveRecord::Schema.define(version: 2021_07_07_150542) do
+
+  create_table "user_classes", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "timezone"
+    t.text "description"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_user_classes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
