@@ -89,6 +89,9 @@ GEM
     iniparse (1.5.0)
     interactive_editor (0.0.11)
       spoon (>= 0.0.1)
+    listen (3.5.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.10.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -119,6 +122,8 @@ GEM
     pry-byebug (3.9.0)
       byebug (~> 11.0)
       pry (~> 0.13.0)
+    puma (5.3.2)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -151,6 +156,9 @@ GEM
       thor (~> 1.0)
     rainbow (3.0.0)
     rake (13.0.4)
+    rb-fsevent (0.11.0)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
     rb-readline (0.5.5)
     regexp_parser (2.1.1)
     rexml (3.2.5)
@@ -199,6 +207,16 @@ GEM
     ruby-progressbar (1.11.0)
     ruby_parser (3.16.0)
       sexp_processor (~> 4.15, >= 4.15.1)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     sexp_processor (4.15.3)
     spoon (0.0.6)
       ffi
@@ -209,7 +227,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     thor (1.1.0)
+    tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.0.0)
@@ -230,16 +250,21 @@ DEPENDENCIES
   fasterer
   flay
   interactive_editor
+  listen (~> 3.3)
   oj
   overcommit
   pry-bond
   pry-byebug
-  rails
+  puma (~> 5.0)
+  rails (~> 6.1.4)
   rspec
   rspec-rails
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  sass-rails (>= 6)
+  sqlite3 (~> 1.4)
+  tzinfo-data
   zeitwerk
 
 BUNDLED WITH
