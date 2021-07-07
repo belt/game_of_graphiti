@@ -1,6 +1,177 @@
 {
   "resources": [
     {
+      "name": "UserClassResource",
+      "type": "user_classes",
+      "graphql_entrypoint": "userClasses",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "name": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "start_date": {
+          "type": "date",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "end_date": {
+          "type": "date",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "timezone": {
+          "type": "integer",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "description": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "user_id": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "name": {
+        },
+        "start_date": {
+        },
+        "end_date": {
+        },
+        "timezone": {
+        },
+        "description": {
+        },
+        "user_id": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "start_date": {
+          "type": "date",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "end_date": {
+          "type": "date",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "timezone": {
+          "type": "integer",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "user_id": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "user": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "UserResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "UserResource",
       "type": "users",
       "graphql_entrypoint": "users",
@@ -111,6 +282,25 @@
     }
   ],
   "endpoints": {
+    "/api/v1/user_classes": {
+      "actions": {
+        "index": {
+          "resource": "UserClassResource"
+        },
+        "show": {
+          "resource": "UserClassResource"
+        },
+        "create": {
+          "resource": "UserClassResource"
+        },
+        "update": {
+          "resource": "UserClassResource"
+        },
+        "destroy": {
+          "resource": "UserClassResource"
+        }
+      }
+    },
     "/api/v1/users": {
       "actions": {
         "index": {
