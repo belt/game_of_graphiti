@@ -1,4 +1,4 @@
-Bond.start if Defined?(Bond)
+Bond.start if defined?(Bond)
 
 def stack
   ap caller.reject{|ln| ln.match?(/\bgems\b/)}
