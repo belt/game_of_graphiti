@@ -12,8 +12,12 @@ $ rails s
 
 h3. terminal 2
 ```
+$ rspec
+
 $ curl -s http://localhost:3000/api/v1/users | jq        # shows users
 $ curl -s http://localhost:3000/api/v1/user_classes | jq # shows classes
 $ curl -s http://localhost:3000/api/v1/enrollments | jq  # shows enrollments
-$ rspec
+
+# enumerate users for a given class
+$ curl -v 'http://localhost:3000/api/v1/enrollments?filter\[user_class_id\]=1'
 ```
