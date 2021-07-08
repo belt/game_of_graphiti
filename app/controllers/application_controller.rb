@@ -12,6 +12,6 @@ class ApplicationController < ActionController::API
 
     Rails.logger.error { err }
 
-    render json: { error: err.message.to_json}, status: 500
+    render json: { error: err.message.to_json }, status: :internal_server_error
   end
 end

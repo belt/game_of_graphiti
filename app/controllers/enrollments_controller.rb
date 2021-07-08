@@ -13,7 +13,7 @@ class EnrollmentsController < ApplicationController
     enrollment = EnrollmentResource.build(params)
 
     if enrollment.save
-      render jsonapi: enrollment, status: 201
+      render jsonapi: enrollment, status: :created
     else
       render jsonapi_errors: enrollment
     end
@@ -22,7 +22,7 @@ class EnrollmentsController < ApplicationController
   def update
     enrollment = EnrollmentResource.find(params)
 
-    if enrollment.update_attributes
+    if enrollment.update
       render jsonapi: enrollment
     else
       render jsonapi_errors: enrollment
@@ -33,7 +33,7 @@ class EnrollmentsController < ApplicationController
     enrollment = EnrollmentResource.find(params)
 
     if enrollment.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: enrollment
     end

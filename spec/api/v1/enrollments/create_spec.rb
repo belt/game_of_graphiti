@@ -1,11 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "enrollments#create", type: :request do
   subject(:make_request) do
     jsonapi_post "/api/v1/enrollments", payload
   end
 
-  describe 'basic create' do
+  describe "basic create" do
     let(:user) { FactoryBot.create :user }
     let(:user_class) { FactoryBot.create :user_class }
     let(:params) do
@@ -14,18 +14,18 @@ RSpec.describe "enrollments#create", type: :request do
     let(:payload) do
       {
         data: {
-          type: 'enrollments',
+          type: "enrollments",
           attributes: params
         }
       }
     end
 
-    it 'works' do
+    it "works" do
       expect(EnrollmentResource).to receive(:build).and_call_original
-      expect {
+      expect do
         make_request
         expect(response.status).to eq(201), response.body
-      }.to change { Enrollment.count }.by(1)
+      end.to change(Enrollment, :count).by(1)
     end
   end
 end

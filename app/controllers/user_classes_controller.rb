@@ -13,7 +13,7 @@ class UserClassesController < ApplicationController
     user_class = UserClassResource.build(params)
 
     if user_class.save
-      render jsonapi: user_class, status: 201
+      render jsonapi: user_class, status: :created
     else
       render jsonapi_errors: user_class
     end
@@ -22,7 +22,7 @@ class UserClassesController < ApplicationController
   def update
     user_class = UserClassResource.find(params)
 
-    if user_class.update_attributes
+    if user_class.update
       render jsonapi: user_class
     else
       render jsonapi_errors: user_class
@@ -33,7 +33,7 @@ class UserClassesController < ApplicationController
     user_class = UserClassResource.find(params)
 
     if user_class.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: user_class
     end

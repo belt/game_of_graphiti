@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     user = UserResource.build(params)
 
     if user.save
-      render jsonapi: user, status: 201
+      render jsonapi: user, status: :created
     else
       render jsonapi_errors: user
     end
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def update
     user = UserResource.find(params)
 
-    if user.update_attributes
+    if user.update
       render jsonapi: user
     else
       render jsonapi_errors: user
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     user = UserResource.find(params)
 
     if user.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: user
     end
