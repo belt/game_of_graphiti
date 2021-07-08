@@ -190,7 +190,8 @@
             "gt",
             "gte",
             "lt",
-            "lte"
+            "lte",
+            "active_on"
           ]
         },
         "end_date": {
