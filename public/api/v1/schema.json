@@ -1,6 +1,102 @@
 {
   "resources": [
     {
+      "name": "EnrollmentResource",
+      "type": "enrollments",
+      "graphql_entrypoint": "enrollments",
+      "description": null,
+      "attributes": {
+        "id": {
+          "type": "integer_id",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "user_id": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        },
+        "user_class_id": {
+          "type": "string",
+          "readable": true,
+          "writable": true,
+          "description": null
+        }
+      },
+      "extra_attributes": {
+      },
+      "sorts": {
+        "id": {
+        },
+        "user_id": {
+        },
+        "user_class_id": {
+        }
+      },
+      "filters": {
+        "id": {
+          "type": "integer_id",
+          "operators": [
+            "eq",
+            "not_eq",
+            "gt",
+            "gte",
+            "lt",
+            "lte"
+          ]
+        },
+        "user_id": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        },
+        "user_class_id": {
+          "type": "string",
+          "operators": [
+            "eq",
+            "not_eq",
+            "eql",
+            "not_eql",
+            "prefix",
+            "not_prefix",
+            "suffix",
+            "not_suffix",
+            "match",
+            "not_match"
+          ]
+        }
+      },
+      "relationships": {
+        "user": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "UserResource"
+        },
+        "user_class": {
+          "type": "belongs_to",
+          "description": null,
+          "resource": "UserClassResource"
+        }
+      },
+      "stats": {
+        "total": [
+          "count"
+        ]
+      }
+    },
+    {
       "name": "UserClassResource",
       "type": "user_classes",
       "graphql_entrypoint": "userClasses",
@@ -41,12 +137,6 @@
           "readable": true,
           "writable": true,
           "description": null
-        },
-        "user_id": {
-          "type": "string",
-          "readable": true,
-          "writable": true,
-          "description": null
         }
       },
       "extra_attributes": {
@@ -63,8 +153,6 @@
         "timezone": {
         },
         "description": {
-        },
-        "user_id": {
         }
       },
       "filters": {
@@ -141,28 +229,13 @@
             "match",
             "not_match"
           ]
-        },
-        "user_id": {
-          "type": "string",
-          "operators": [
-            "eq",
-            "not_eq",
-            "eql",
-            "not_eql",
-            "prefix",
-            "not_prefix",
-            "suffix",
-            "not_suffix",
-            "match",
-            "not_match"
-          ]
         }
       },
       "relationships": {
-        "user": {
-          "type": "belongs_to",
+        "enrollments": {
+          "type": "has_many",
           "description": null,
-          "resource": "UserResource"
+          "resource": "EnrollmentResource"
         }
       },
       "stats": {
@@ -273,6 +346,11 @@
         }
       },
       "relationships": {
+        "enrollments": {
+          "type": "has_many",
+          "description": null,
+          "resource": "EnrollmentResource"
+        }
       },
       "stats": {
         "total": [
@@ -282,6 +360,25 @@
     }
   ],
   "endpoints": {
+    "/api/v1/enrollments": {
+      "actions": {
+        "index": {
+          "resource": "EnrollmentResource"
+        },
+        "show": {
+          "resource": "EnrollmentResource"
+        },
+        "create": {
+          "resource": "EnrollmentResource"
+        },
+        "update": {
+          "resource": "EnrollmentResource"
+        },
+        "destroy": {
+          "resource": "EnrollmentResource"
+        }
+      }
+    },
     "/api/v1/user_classes": {
       "actions": {
         "index": {

@@ -1,5 +1,6 @@
 class UserClass < ApplicationRecord
-  belongs_to :user
+  has_many :enrolments
+  has_many :users, through: :enrolments
 
   validates :name, presence: true, allow_blank: false
   validates :description, presence: true, allow_blank: false

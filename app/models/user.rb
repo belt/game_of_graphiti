@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :user_classes
+  has_many :enrolments
+  has_many :user_classes, through: :enrolments
 
   validates :first_name, presence: true, allow_blank: false
   validates :last_name, presence: true, allow_blank: false

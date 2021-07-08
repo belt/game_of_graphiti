@@ -11,7 +11,7 @@ RSpec.describe "user_classes#create", type: :request do
     end
 
     let(:params) do
-      attributes_for(:user_class).merge(user_id: user.id)
+      attributes_for(:user_class)
     end
     let(:payload) do
       {
