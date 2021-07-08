@@ -22,5 +22,5 @@ $ curl -s http://localhost:3000/api/v1/enrollments | jq  # shows enrollments
 $ curl -v 'http://localhost:3000/api/v1/enrollments?filter\[user_class_id\]=1'
 
 # enumerate classes scheduled within a date range
-$ curl -v 'http://localhost:3000/api/v1/user_classes?filter\[start_date\]\[active_on\]=2021-07-08' | jq
+$ curl -v 'http://localhost:3000/api/v1/user_classes?filter\[class_range\]\[lower_bound\]=2021-07-08&filter\[class_range\]\[upper_bound\]=2021-07-09' | jq
 ```
