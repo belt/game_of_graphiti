@@ -25,6 +25,39 @@ RSpec.describe EnrollmentResource, type: :resource do
     end
   end
 
+  describe "advanced creating" do
+    let(:payload) do
+      {
+        data: {
+          type: "enrollments",
+          attributes: {},
+          relationships: {
+            user: {
+              data: {
+                id: user.id, type: 'users'
+              }
+            },
+            user_class: {
+              data: {
+                id: user_class.id, type: 'user_classes'
+              }
+            }
+          }
+        }
+      }
+    end
+
+    let(:instance) do
+      described_class.build(payload)
+    end
+
+    it "works" do
+      expect do
+        expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
+      end.to change(Enrollment, :count).by(1)
+    end
+  end
+
   describe "updating" do
     let!(:enrollment) { create(:enrollment, user_id: user.id, user_class_id: user_class.id) }
 
