@@ -13,8 +13,8 @@ RSpec.describe UserResource, type: :resource do
   end
 
   describe 'filtering' do
-    let!(:user1) { create(:user) }
-    let!(:user2) { create(:user) }
+    let!(:user1) { create(:user, email: Faker::Internet.email) }
+    let!(:user2) { create(:user, email: Faker::Internet.email) }
 
     context 'by id' do
       before do
@@ -30,8 +30,8 @@ RSpec.describe UserResource, type: :resource do
 
   describe 'sorting' do
     describe 'by id' do
-      let!(:user1) { create(:user) }
-      let!(:user2) { create(:user) }
+      let!(:user1) { create(:user, email: Faker::Internet.email) }
+      let!(:user2) { create(:user, email: Faker::Internet.email) }
 
       context 'when ascending' do
         before do

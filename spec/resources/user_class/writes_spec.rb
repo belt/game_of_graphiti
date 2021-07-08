@@ -16,7 +16,6 @@ RSpec.describe UserClassResource, type: :resource do
     end
 
     let(:instance) do
-      payload[:data][:attributes][:user_id] = user.id
       UserClassResource.build(payload)
     end
 

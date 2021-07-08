@@ -8,10 +8,10 @@ RSpec.describe "users#index", type: :request do
   end
 
   describe 'basic fetch' do
-    let!(:user1) { create(:user) }
-    let!(:user2) { create(:user) }
+    let!(:user1) { create(:user, email: Faker::Internet.email) }
+    let!(:user2) { create(:user, email: Faker::Internet.email) }
 
-    it 'works' do
+    it 'works', :aggregate_errors do
       expect(UserResource).to receive(:all).and_call_original
       make_request
       expect(response.status).to eq(200), response.body
